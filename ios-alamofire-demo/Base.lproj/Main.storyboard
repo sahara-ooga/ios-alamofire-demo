@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_alamofire_demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xrh-Th-mpN">
+                                <rect key="frame" x="30" y="140" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="0Cg-a3-neo"/>
+                                    <constraint firstAttribute="height" constant="120" id="NpL-ir-jqs"/>
+                                    <constraint firstAttribute="width" constant="120" id="Ybw-sQ-2Ll"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASi-cZ-vbu">
+                                <rect key="frame" x="170" y="140" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyr-aG-oU0">
+                                <rect key="frame" x="30" y="567" width="315" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3yM-As-kVq"/>
+                                </constraints>
+                                <state key="normal" title="fetch">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapFetchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxq-Bl-8UK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="telop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41V-MQ-kA7">
+                                <rect key="frame" x="170" y="191" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ASi-cZ-vbu" firstAttribute="leading" secondItem="Xrh-Th-mpN" secondAttribute="trailing" constant="20" id="502-Cn-OhL"/>
+                            <constraint firstItem="ASi-cZ-vbu" firstAttribute="top" secondItem="Xrh-Th-mpN" secondAttribute="top" id="Ko9-Cx-xh8"/>
+                            <constraint firstAttribute="trailing" secondItem="ASi-cZ-vbu" secondAttribute="trailing" constant="30" id="Sfv-br-aFh"/>
+                            <constraint firstItem="Dyr-aG-oU0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="Ti5-KM-6tl"/>
+                            <constraint firstAttribute="trailing" secondItem="Dyr-aG-oU0" secondAttribute="trailing" constant="30" id="Wpm-5N-Tcf"/>
+                            <constraint firstItem="41V-MQ-kA7" firstAttribute="leading" secondItem="Xrh-Th-mpN" secondAttribute="trailing" constant="20" id="aBc-f5-FZx"/>
+                            <constraint firstItem="41V-MQ-kA7" firstAttribute="top" secondItem="ASi-cZ-vbu" secondAttribute="bottom" constant="30" id="bFb-PF-8qO"/>
+                            <constraint firstItem="Xrh-Th-mpN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="c0w-VO-66N"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dyr-aG-oU0" secondAttribute="bottom" constant="50" id="hsy-eF-b5p"/>
+                            <constraint firstItem="Xrh-Th-mpN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="pb0-KM-SXV"/>
+                            <constraint firstAttribute="trailing" secondItem="41V-MQ-kA7" secondAttribute="trailing" constant="30" id="uvi-cS-9M5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="ASi-cZ-vbu" id="wlc-24-HzF"/>
+                        <outlet property="imageView" destination="Xrh-Th-mpN" id="yPg-kJ-9iF"/>
+                        <outlet property="telopLabel" destination="41V-MQ-kA7" id="CR9-ZQ-94n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
