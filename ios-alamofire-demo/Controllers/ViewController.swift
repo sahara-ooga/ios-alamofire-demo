@@ -46,7 +46,7 @@ extension ViewController: ForecastLoadable {
             SVProgressHUD.showInfo(withStatus: "NoData!")
 
         case .error(let error):
-            SVProgressHUD.showError(withStatus: "Erroo!")
+            SVProgressHUD.showError(withStatus: "Error!")
             print("error: \(error)")
         }
     }
@@ -71,7 +71,7 @@ extension ViewController: ForecastLoadable {
                                 print("receivedSize: \(receivedSize) \ntotalSize: \(totalSize)")
         },
                               completionHandler: { image, error, cacheType, imageURL in
-                                print("Finished\nimage: \(image), erroe: \(error), cacheType: \(cacheType), imageURL: \(imageURL)")
+                                print("Finished\nimage: \(String(describing: image)), error: \(String(describing: error)), cacheType: \(cacheType), imageURL: \(String(describing: imageURL))")
         })
     }
 }
